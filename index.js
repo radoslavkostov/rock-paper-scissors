@@ -52,7 +52,7 @@ function generateComputerMove() {
     if (computerMoveRndNum < 1/3) {
         return ROCK;
     }
-    else if (computerMove < 2/3) {
+    else if (computerMoveRndNum < 2/3) {
         return PAPER;
     }
     return SCISSORS;
