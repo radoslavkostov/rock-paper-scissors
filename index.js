@@ -29,7 +29,6 @@ const TURNS_COUNT = 5;
 let turnsLeft = TURNS_COUNT, computerWins = 0, playerWins = 0, draws = 0;
 let computerMove = "", playerMove = "";
 let outcome = "";
-let promptMessage = "";
 while (turnsLeft) {
 
     computerMove = generateComputerMove();
