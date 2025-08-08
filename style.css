@@ -1,0 +1,142 @@
+/* 
+    white: F5F5F4
+    gray: 9FA4A4
+    orange: D4613A
+    brown: A77F5B
+    black: 2E2D31
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+/* header */
+.headerContainer {
+    background-color: #2E2D31;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerTitle {
+    color: #F5F5F4;
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+/* main */
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    height: 90%;
+    margin-top: 0.3rem;
+}
+
+/* player and computer */
+.playerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.computerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.playerInfo, .computerInfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.playerInfo > img, .computerInfo > img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.moveIconsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.moveIconsContainer button {
+    width: 40px;
+    border: 2px solid #2E2D31;
+    border-radius: 4px;
+    padding: 0.2rem;
+}
+
+.moveIconsContainer img {
+    width: 100%;
+}
+
+/* score */
+.scoreContainer {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.scoreTitle {
+    font-size: 1.4rem;
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+    font-size: 2rem;
+}
+
+.resultsContainer {
+    width: 100%;
+}
+
+.results {
+    list-style: none;
+    border-top: 4px solid #2E2D31;
+}
+
+.results > li {
+    border-bottom: 2px solid #2E2D31;
+    padding: 0.5rem;
+    max-height: 500px;
+    white-space: pre;
+}
+
+.finalResultsContainer {
+    font-size: 2rem;
+}
+
+/* footer */
+.footerContainer {
+    background-color: #2E2D31;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContainer a {
+    color: #F5F5F4;
+}
