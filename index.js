@@ -27,24 +27,32 @@ const TURNS_COUNT = 5;
 
 
 let turnsLeft = TURNS_COUNT, computerWins = 0, playerWins = 0, draws = 0;
-let computerMove = "", playerMove = "";
 let outcome = "";
-while (turnsLeft) {
 
-    computerMove = generateComputerMove();
-    playerMove = generatePlayerMove();
-    if (playerMove !== ROCK && playerMove !== PAPER && playerMove !== SCISSORS) {
-        console.log(CONSOLE_MESSAGE_INVALID_INPUT);
-        continue;
+let moveIconsContainer = document.querySelector(".moveIconsContainer");
+moveIconsContainer.addEventListener("click", (e) => {
+    if(!turnsLeft) {
+        return;
     }
+    switch(e.target.className) {
+        case ROCK : playRound(ROCK, generateComputerMove());
+        break;
+        case PAPER : playRound(PAPER, generateComputerMove());
+        break;
+        case SCISSORS : playRound(SCISSORS, generateComputerMove());
+        break;
+    }
+});
 
+function playRound(playerMove, computerMove) {
     outcome = determineOutcome(computerMove, playerMove);
     updateScore(outcome);
-    printCurrentGameInformation();
-
+    addCurrentGameInformation(playerMove, computerMove);
     --turnsLeft;
+    if(!turnsLeft) {
+        addFinalGameInformation();
+    }
 }
-printFinalGameInformation();
 
 function generateComputerMove() {
     let computerMoveRndNum = Math.random();
@@ -99,29 +107,38 @@ function determineOutcome(computerMove, playerMove) {
 function updateScore(outcome) {
     if (outcome === WIN) {
         ++playerWins;
+        ++document.querySelector(".playerScore").textContent;
     }
     else if(outcome === LOSS) {
         ++computerWins;
+        ++document.querySelector(".computerScore").textContent;
     }
     else {
         ++draws;
     }
 }
 
-function printFinalGameInformation() {
-    printCurrentGameInformation();
+function addFinalGameInformation() {
+    let finalResultsContainer = document.createElement("div");
+        finalResultsContainer.classList.add("finalResultsContainer");
     if (computerWins > playerWins) {
-        console.log(CONSOLE_MESSAGE_LOSS);
+        finalResultsContainer.textContent = CONSOLE_MESSAGE_LOSS;
     }
     else if (computerWins < playerWins) {
-        console.log(CONSOLE_MESSAGE_WIN);
+        finalResultsContainer.textContent = CONSOLE_MESSAGE_WIN;
     }
     else {
-        console.log(CONSOLE_MESSAGE_DRAW);
+        finalResultsContainer.textContent = CONSOLE_MESSAGE_DRAW;
     }
+    let scoreContainer = document.querySelector(".scoreContainer");
+    scoreContainer.appendChild(finalResultsContainer);
 }
 
-function printCurrentGameInformation() {
-    console.log(CONSOLE_MESSAGE_LAST_COMPUTER_MOVE + computerMove + "\n" + CONSOLE_MESSAGE_LAST_PLAYER_MOVE + playerMove + "\n" +
-            CONSOLE_MESSAGE_COMPUTER_WINS + computerWins + "\n" + CONSOLE_MESSAGE_PLAYER_WINS + playerWins + "\n" + CONSOLE_MESSAGE_DRAWS + draws); 
+function addCurrentGameInformation(playerMove, computerMove) {
+    let results = document.querySelector(".results");
+    let currResult = document.createElement("li");
+    currResult.textContent = CONSOLE_MESSAGE_LAST_COMPUTER_MOVE + computerMove + "\n" + CONSOLE_MESSAGE_LAST_PLAYER_MOVE + playerMove + "\n" +
+            CONSOLE_MESSAGE_COMPUTER_WINS + computerWins + "\n" + CONSOLE_MESSAGE_PLAYER_WINS + playerWins + "\n" + CONSOLE_MESSAGE_DRAWS + draws;
+    results.appendChild(currResult);
+
 }
