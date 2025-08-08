@@ -4,10 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock paper scissors</title>
-    <script src="./index.js"></script>
+    <title>Rock Paper Scissors</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script defer src="./index.js"></script>
 </head>
 <body>
-    
+    <div class="headerContainer">
+        <div class="headerTitle">
+            Rock Paper Scissors
+        </div>
+    </div>
+    <div class="mainContainer">
+        <div class="main">
+            <div class="playerContainer">
+                <div class="playerInfo">
+                    <img src="./images/player.png" alt="Player Icon">
+                    <div class="playerName">You</div>
+                </div>
+                <div class="playerInstruction">Pick your move:</div>
+                <div class="moveIconsContainer">
+                    <button class="rock">
+                        <img class="rock" src="./images/rock.png" alt="Rock">
+                    </button>
+                    <button class="paper">
+                        <img class="paper" src="./images/paper.png" alt="Paper">
+                    </button>
+                    <button class="scissors">
+                        <img class="scissors" src="./images/scissors.png" alt="Scissors">
+                    </button>
+                </div>
+            </div>
+            <div class="scoreContainer">
+                <!-- <div class="scoreTitle">Score</div> -->
+                <div class="scoreboard">
+                    <div class="playerScore">
+                        0
+                    </div>
+                    <div class="delimiter">
+                        :
+                    </div>
+                    <div class="computerScore">
+                        0
+                    </div>
+                </div>
+                <div class="resultsContainer">
+                    <ul class="results">
+                        <!-- <li>placeholder</li> -->
+                    </ul>
+                </div>
+                <!-- <div class="finalResultsContainer">
+                    You won!
+                </div> -->
+            </div>
+            <div class="computerContainer">
+                <div class="computerInfo">
+                    <img src="./images/computer.jpg" alt="Computer Icon">
+                    <div class="computerName">Computer</div>
+                </div>
+                <!-- <div class="moveIconsContainer">
+                    <img src="./images/rock.png" alt="">
+                    <img src="./images/paper.png" alt="">
+                    <img src="./images/scissors.png" alt="">
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+    <div class="footerContainer">
+        <a href="https://www.flaticon.com/free-icons/rock-paper-scissors">
+            Rock Paper Scissors icons created by iconading, Cap Cool, andinur - Flaticon
+        </a>
+    </div>
 </body>
 </html>
